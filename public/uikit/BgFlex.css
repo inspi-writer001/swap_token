@@ -1,0 +1,13 @@
+.bgFlex{
+    display: flex;
+    z-index: 0;
+    background-color: #12326b !important;
+    border-radius: 0px 0px 30px 30px ; 
+    width: 70%;
+    height: 25% ;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 50px 16px 40px 16px;
+    left: 15%;
+    /* right: 10%;  */
+}

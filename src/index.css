@@ -38,7 +38,8 @@ body {
 ul[class],
 ol[class] {
   list-style: none;
-  background: none;  
+  background: #12326b;  
+  
   /* I altered the backgound of the lists i.e nav-bar */
 }
 

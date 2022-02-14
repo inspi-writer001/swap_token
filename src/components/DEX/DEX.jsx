@@ -38,12 +38,15 @@ const styles = {
 
 const nativeAddress = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 
+
+// JSON / BSON format keeping the three chain exchanges
 const chainIds = {
   "0x1": "eth",
   "0x38": "bsc",
   "0x89": "polygon",
 };
 
+//Looping and returning each chainId i.e 0x1, 0x38, etc provided by the user
 const getChainIdByName = (chainName) => {
   for (let chainId in chainIds) {
     if (chainIds[chainId] === chainName) return chainId;
@@ -59,13 +62,14 @@ function DEX({ chain, customTokens = {} }) {
   const { Moralis, isInitialized, chainId } = useMoralis();
   const [isFromModalActive, setFromModalActive] = useState(false);
   const [isToModalActive, setToModalActive] = useState(false);
-  const [fromToken, setFromToken] = useState();
-  const [toToken, setToToken] = useState();
-  const [fromAmount, setFromAmount] = useState();
+  const [fromToken, setFromToken] = useState();  //the react state of the from adddress this would remain change as the case may be
+  //comment continued ..i.e user.walletTokenSelected
+  const [toToken, setToToken] = useState(); //this token is fetched from 1inch exchange
+  const [fromAmount, setFromAmount] = useState(); //the react state of the user's amount, default is 0.00
   const [quote, setQuote] = useState();
   const [currentTrade, setCurrentTrade] = useState();
-  const { fetchTokenPrice } = useTokenPrice();
-  const [tokenPricesUSD, setTokenPricesUSD] = useState({});
+  const { fetchTokenPrice } = useTokenPrice(); //token price fetched from 1inch exchange
+  const [tokenPricesUSD, setTokenPricesUSD] = useState({}); //using the tken price in a react state
 
   const tokens = useMemo(() => {
     return { ...customTokens, ...tokenList };
