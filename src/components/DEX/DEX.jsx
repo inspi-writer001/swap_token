@@ -206,11 +206,13 @@ function DEX({ chain, customTokens = {} }) {
                 placeholder="0.00"
                 style={{ ...styles.input, marginLeft: "-10px" }}
                 onChange={setFromAmount}
-                value={fromAmount}
+                value={fromAmount} //set this to the user's account
               />
               <Text style={{ fontWeight: "600", color: "#434343" }}>
-                {fromTokenAmountUsd}
+                {fromTokenAmountUsd} + "jsss"
               </Text>
+              {/* this should show the user's
+                balance in usd or not maybe just 0.00 */}
             </div>
             <Button
               style={{
@@ -277,8 +279,8 @@ function DEX({ chain, customTokens = {} }) {
                     ? parseFloat(
                         Moralis?.Units?.FromWei(
                           quote?.toTokenAmount,
-                          quote?.toToken?.decimals,
-                        ),
+                          quote?.toToken?.decimals
+                        )
                       ).toFixed(6)
                     : ""
                 }
@@ -365,8 +367,8 @@ function DEX({ chain, customTokens = {} }) {
         <InchModal
           open={isFromModalActive}
           onClose={() => setFromModalActive(false)}
-          setToken={setFromToken}
-          tokenList={tokens}
+          setToken={setFromToken} //change to user's token selected
+          tokenList={tokens} //put only tokens from the app exchange
         />
       </Modal>
       <Modal
@@ -381,7 +383,7 @@ function DEX({ chain, customTokens = {} }) {
           open={isToModalActive}
           onClose={() => setToModalActive(false)}
           setToken={setToToken}
-          tokenList={tokens}
+          tokenList={tokens} //set to tokens available on the app for swap
         />
       </Modal>
     </>

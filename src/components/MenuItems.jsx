@@ -7,7 +7,7 @@ function MenuItems() {
 
   return (
     <Menu
-      theme="light"
+      //theme="dark"
       mode="horizontal"
       style={{
         display: "flex",
@@ -34,7 +34,7 @@ function MenuItems() {
         <NavLink to="/erc20balance">💰 Balances</NavLink>
       </Menu.Item>
       <Menu.Item key="/erc20transfers">
-        <NavLink to="/erc20transfers">💸 Transfers</NavLink>
+        <NavLink to="/erc20transfers">💸Recent Transfers</NavLink>
       </Menu.Item>
       {/* <Menu.Item key="/nftBalance">
         <NavLink to="/nftBalance">🖼 NFTs</NavLink>

@@ -32,11 +32,14 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: white;
+  overflow-x: scroll;
 }
 
 ul[class],
 ol[class] {
   list-style: none;
+  background: none;  
+  /* I altered the backgound of the lists i.e nav-bar */
 }
 
 a:not([class]) {
